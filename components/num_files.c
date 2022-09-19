@@ -28,5 +28,6 @@ num_files(const char *path)
 
 	closedir(dir);
 
-	return bprintf("%d", num);
+	// return bprintf("%d", num);
+	return (num>0)? bprintf("^c#ffffff^%d^d^", num):bprintf("%d", num);
 }

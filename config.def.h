@@ -5,6 +5,7 @@ const unsigned int interval = 1000;
 
 /* text to show if no value can be retrieved */
 static const char unknown_str[] = "n/a";
+#include "delimeter.h"
 
 /* maximum output string length */
 #define MAXLEN 2048
@@ -65,5 +66,22 @@ static const char unknown_str[] = "n/a";
  */
 static const struct arg args[] = {
 	/* function format          argument */
-	{ datetime, "%s",           "%F %T" },
+	{ get_mpd,       "^c#9ee9c0^^d^%s",    NULL},
+	{ separator,     delimeter,             NULL },
+	{ run_command,   "^c#EBCB8B^^d^ %s",   "pamixer --get-volume-human" },
+	{ separator,     delimeter,             NULL },
+	{ wifi_perc,     "%s",                  "wlan0" },
+	{ eth,           "%s",                  "enp0s31f6" },
+	{ separator,     delimeter,             NULL },
+	{ num_files,     "^c#9cdcfe^^d^ %s",   "/home/jonas/.local/share/mail/main/INBOX/new" },
+	{ separator,     delimeter,             NULL },
+	{ temp,          "^c#ff616a^^d^ %s°C", "/sys/class/thermal/thermal_zone0/temp" },
+	{ separator,     delimeter,             NULL },
+	{ keymap,        "^c#e59e98^^d^ %s",   NULL },
+	{ separator,     delimeter,             NULL },
+	{ battery_state, "^c#ebef74^%s^d^",     "BAT0" },
+	{ battery_perc,  "%s",                  "BAT0" },
+	{ separator,     delimeter,             NULL },
+	{ datetime,      "%s",                  "%F %T" },
+    { separator,     "%s",                  "^f-5^"},
 };

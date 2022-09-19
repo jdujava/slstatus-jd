@@ -8,6 +8,7 @@
 
 #include "../slstatus.h"
 #include "../util.h"
+#include "../delimeter.h"
 
 #define RSSI_TO_PERC(rssi) \
 			rssi >= -50 ? 100 : \
@@ -62,7 +63,8 @@
 		       "%*d\t\t%*d\t\t %*d\t  %*d\t\t %*d", &cur);
 
 		/* 70 is the max of /proc/net/wireless */
-		return bprintf("%d", (int)((float)cur / 70 * 100));
+		// return bprintf("%d", (int)((float)cur / 70 * 100));
+		return bprintf("^c#e7a6d0^^d^ %d%%%s", (int)((float)cur / 70 * 100), delimeter);
 	}
 
 	const char *

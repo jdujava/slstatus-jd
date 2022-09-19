@@ -16,7 +16,7 @@ CFLAGS   = -std=c99 -pedantic -Wall -Wextra -Wno-unused-parameter -Os
 LDFLAGS  = -L$(X11LIB) -s
 # OpenBSD: add -lsndio
 # FreeBSD: add -lkvm -lsndio
-LDLIBS   = -lX11
+LDLIBS   = -lasound -lX11 `pkg-config --libs libmpdclient`
 
 # compiler and linker
 CC = cc
