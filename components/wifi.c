@@ -31,20 +31,22 @@
 		char status[5];
 		FILE *fp;
 
+        const char* NaN = bprintf("^c#e7a6d0^ ^c#7c8390^%s^d^%s", "off", delimeter);
+
 		if (esnprintf(path, sizeof(path), NET_OPERSTATE, interface) < 0)
-			return NULL;
+			return "";
 		if (!(fp = fopen(path, "r"))) {
 			warn("fopen '%s':", path);
-			return NULL;
+			return NaN;
 		}
 		p = fgets(status, 5, fp);
 		fclose(fp);
 		if (!p || strcmp(status, "up\n") != 0)
-			return NULL;
+			return NaN;
 
 		if (!(fp = fopen("/proc/net/wireless", "r"))) {
 			warn("fopen '/proc/net/wireless':");
-			return NULL;
+			return NaN;
 		}
 
 		for (i = 0; i < 3; i++)
@@ -53,10 +55,10 @@
 
 		fclose(fp);
 		if (i < 2 || !p)
-			return NULL;
+			return NaN;
 
 		if (!(datastart = strstr(buf, interface)))
-			return NULL;
+			return NaN;
 
 		datastart = (datastart+(strlen(interface)+1));
 		sscanf(datastart + 1, " %*d   %d  %*d  %*d\t\t  %*d\t   "
