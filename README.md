@@ -1,3 +1,10 @@
+My fork of `slstatus`.
+
+To set upstream remote to original slstatus repo:
+```sh
+git remote add upstream git://git.suckless.org/slstatus
+```
+
 slstatus - suckless status
 ==========================
 slstatus is a small tool for providing system status information to other
