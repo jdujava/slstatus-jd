@@ -40,7 +40,7 @@
 	{
 		int cap_perc;
 		char path[PATH_MAX];
-		const char *symbol="";
+		const char *symbol = "";
 
 		if (esnprintf(path, sizeof(path), POWER_SUPPLY_CAPACITY, bat) < 0)
 			return NULL;
@@ -49,23 +49,19 @@
 
 		// return bprintf("%d", cap_perc);
 		switch(cap_perc){
-			case 0 ... 14:
-				symbol="";
-				break;
-			case 15 ... 29:
-				symbol="";
-				break;
-			case 30 ... 69:
-				symbol="";
-				break;
-			case 70 ... 84:
-				symbol="";
-				break;
-			case 85 ... 100:
-				symbol="";
-				break;
+			case  0 ...   3: symbol = "󰂎"; break;
+			case  4 ...   9: symbol = "󰁺"; break;
+			case 10 ...  19: symbol = "󰁻"; break;
+			case 20 ...  29: symbol = "󰁼"; break;
+			case 30 ...  39: symbol = "󰁽"; break;
+			case 40 ...  49: symbol = "󰁾"; break;
+			case 50 ...  59: symbol = "󰁿"; break;
+			case 60 ...  69: symbol = "󰂀"; break;
+			case 70 ...  79: symbol = "󰂁"; break;
+			case 80 ...  89: symbol = "󰂂"; break;
+			case 90 ... 100: symbol = "󰁹"; break;
 		}
-		return bprintf("^c#fcffd4^%s^d^ %d%%", symbol, cap_perc);
+		return bprintf("^c#fcffd4^%s^d^^f+5^%d%%", symbol, cap_perc);
 	}
 
 	const char *
@@ -75,11 +71,11 @@
 			char *state;
 			char *symbol;
 		} map[] = {
-			{ "Charging",		" " },
-			{ "Discharging",	"" },
-			{ "Unknown",		" " },
-			{ "Not charging",	" " },
-			{ "Full",		  	" " },
+			{ "Charging",     "" },
+			{ "Discharging",  "^f-5^" },
+			{ "Unknown",      "" },
+			{ "Not charging", "🔌" },
+			{ "Full",         "" },
 		};
 		size_t i;
 		char path[PATH_MAX], state[12];
