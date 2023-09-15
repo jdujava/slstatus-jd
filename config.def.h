@@ -65,11 +65,12 @@ static const char unknown_str[] = "n/a";
  * wifi_perc           WiFi signal in percent          interface name (wlan0)
  */
 static const struct arg args[] = {
-	/* function format          argument */
+	/* function      format                    argument */
 	{ get_mpd,       "^c#9ee9c0^^d^%s  ",     NULL},
 	{ run_command,   "^c#EBCB8B^^d^ %s  ",    "pamixer --get-volume-human" },
 	{ wifi_perc,     "%s",                     "wlan0" },
 	{ eth,           "%s  ",                   "enp0s31f6" },
+	{ run_command,   "%s ",                    "dunststatus" },
 	{ num_files,     "^c#9cdcfe^^d^ %s  ",    "/home/jonas/.local/share/mail/main/INBOX/new" },
 	{ temp,          "^c#ff616a^^d^ %s°C  ",  "/sys/class/thermal/thermal_zone0/temp" },
 	{ keymap,        "^c#e59e98^^d^ %s  ",    NULL },
