@@ -71,7 +71,7 @@ static const struct arg args[] = {
 	{ wifi_perc,     "%s",                     "wlan0" },
 	{ eth,           "%s  ",                   "enp0s31f6" },
 	{ run_command,   "%s ",                    "dunststatus" },
-	{ num_files,     "^c#9cdcfe^^d^ %s  ",    "/home/jonas/.local/share/mail/main/INBOX/new" },
+	{ num_files,     "^c#9cdcfe^^d^ %s  ",    "~/.local/share/mail/main/INBOX/new" },
 	{ temp,          "^c#ff616a^^d^ %s°C  ",  "/sys/class/thermal/thermal_zone0/temp" },
 	{ keymap,        "^c#e59e98^^d^ %s  ",    NULL },
 	{ battery_state, "^c#ebef74^%s^f2^",       "BAT0" },
