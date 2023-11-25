@@ -1,0 +1,6 @@
+#!/bin/sh
+
+case $(dunstctl is-paused) in
+    true)  echo "^f-2^^c#ff616a^🔕^d^^f+5^";;
+    false) echo "^c#7ef9c0^🔔^d^ ";;
+esac
