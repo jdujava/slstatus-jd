@@ -1,0 +1,9 @@
+# EditorConfig
+# https://editorconfig.org
+
+# top-most EditorConfig file
+root = true
+
+# apply to all .c and .h files
+[*.{c,h}]
+indent_style = tab
