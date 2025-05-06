@@ -238,7 +238,9 @@
 						snprintf(strength, sizeof(strength), "%d", RSSI_TO_PERC(*p));
 				}
 				if (hdr.nlmsg_type == NLMSG_DONE)
-					return *strength ? strength : NULL;
+					return *strength
+						? bprintf("^c#e7a6d0^^d^ %s%%", strength)
+						: bprintf("^c#e7a6d0^^c#7c8390^ %s^d^", "off");
 			}
 		}
 	}
