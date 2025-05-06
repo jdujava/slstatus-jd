@@ -2,6 +2,7 @@
 #include <dirent.h>
 #include <stdio.h>
 #include <string.h>
+#include <wordexp.h>
 
 #include "../slstatus.h"
 #include "../util.h"
@@ -13,7 +14,10 @@ num_files(const char *path)
 	DIR *dir;
 	int num;
 
-	if (!(dir = opendir(path))) {
+	wordexp_t exp_path;
+	wordexp(path, &exp_path, 0);
+
+	if (!(dir = opendir(exp_path.we_wordv[0]))) {
 		warn("opendir '%s':", path);
 		return NULL;
 	}
@@ -27,6 +31,8 @@ num_files(const char *path)
 	}
 
 	closedir(dir);
+	wordfree(&exp_path);
 
-	return bprintf("%d", num);
+	// return bprintf("%d", num);
+	return (num>0)? bprintf("^c#ffffff^%d^d^", num):bprintf("%d", num);
 }

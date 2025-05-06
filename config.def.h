@@ -70,6 +70,7 @@ static const struct arg args[] = {
 	{ run_command,   "^c#EBCB8B^^d^ %s  ",    "pamixer --get-volume-human" },
 	{ wifi_perc,     "%s  ",                   "wlan0" },
 	{ eth,           "%s  ",                   "enp0s31f6" },
+	{ num_files,     "^c#9cdcfe^^d^ %s  ",    "~/.local/share/mail/main/INBOX/new" },
 	{ temp,          "^c#ff616a^^d^ %s°C  ",  "/sys/class/thermal/thermal_zone0/temp" },
 	{ keymap,        "^c#e59e98^^d^ %s  ",    NULL },
 	{ battery_state, "^c#ebef74^%s^d^",        "BAT0" },
