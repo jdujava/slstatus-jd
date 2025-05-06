@@ -66,6 +66,7 @@ static const char unknown_str[] = "n/a";
  */
 static const struct arg args[] = {
 	/* function      format                    argument */
+	{ get_mpd,       "^c#9ee9c0^^d^%s  ",     NULL},
 	{ run_command,   "^c#EBCB8B^^d^ %s  ",    "pamixer --get-volume-human" },
 	{ wifi_perc,     "%s  ",                   "wlan0" },
 	{ temp,          "^c#ff616a^^d^ %s°C  ",  "/sys/class/thermal/thermal_zone0/temp" },
