@@ -51,7 +51,7 @@ clean:
 dist:
 	rm -rf "slstatus-$(VERSION)"
 	mkdir -p "slstatus-$(VERSION)/components"
-	cp -R LICENSE Makefile README config.mk config.def.h \
+	cp -R LICENSE Makefile README.md config.mk config.def.h \
 	      arg.h slstatus.h slstatus.c $(REQ:=.c) $(REQ:=.h) \
 	      slstatus.1 "slstatus-$(VERSION)"
 	cp -R $(COM:=.c) "slstatus-$(VERSION)/components"
@@ -61,11 +61,14 @@ dist:
 install: all
 	mkdir -p "$(DESTDIR)$(PREFIX)/bin"
 	cp -f slstatus "$(DESTDIR)$(PREFIX)/bin"
+	cp -f components/dunststatus "$(DESTDIR)$(PREFIX)/bin"
 	chmod 755 "$(DESTDIR)$(PREFIX)/bin/slstatus"
+	chmod 755 "$(DESTDIR)$(PREFIX)/bin/dunststatus"
 	mkdir -p "$(DESTDIR)$(MANPREFIX)/man1"
 	cp -f slstatus.1 "$(DESTDIR)$(MANPREFIX)/man1"
 	chmod 644 "$(DESTDIR)$(MANPREFIX)/man1/slstatus.1"
 
 uninstall:
 	rm -f "$(DESTDIR)$(PREFIX)/bin/slstatus"
+	rm -f "$(DESTDIR)$(PREFIX)/bin/dunststatus"
 	rm -f "$(DESTDIR)$(MANPREFIX)/man1/slstatus.1"
