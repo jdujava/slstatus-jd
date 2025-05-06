@@ -28,6 +28,7 @@ COM =\
 	components/user\
 	components/volume\
 	components/wifi\
+	components/eth\
 	components/mpd
 
 all: slstatus

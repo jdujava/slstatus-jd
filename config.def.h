@@ -69,6 +69,7 @@ static const struct arg args[] = {
 	{ get_mpd,       "^c#9ee9c0^^d^%s  ",     NULL},
 	{ run_command,   "^c#EBCB8B^^d^ %s  ",    "pamixer --get-volume-human" },
 	{ wifi_perc,     "%s  ",                   "wlan0" },
+	{ eth,           "%s  ",                   "enp0s31f6" },
 	{ temp,          "^c#ff616a^^d^ %s°C  ",  "/sys/class/thermal/thermal_zone0/temp" },
 	{ keymap,        "^c#e59e98^^d^ %s  ",    NULL },
 	{ battery_state, "^c#ebef74^%s^d^",        "BAT0" },
