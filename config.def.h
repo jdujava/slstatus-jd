@@ -73,7 +73,7 @@ static const struct arg args[] = {
 	{ num_files,     "^c#9cdcfe^^d^ %s  ",    "~/.local/share/mail/main/INBOX/new" },
 	{ temp,          "^c#ff616a^^d^ %s°C  ",  "/sys/class/thermal/thermal_zone0/temp" },
 	{ keymap,        "^c#e59e98^^d^ %s  ",    NULL },
-	{ battery_state, "^c#ebef74^%s^d^",        "BAT0" },
+	{ battery_state, "^c#ebef74^%s^f2^",       "BAT0" },
 	{ battery_perc,  "%s  ",                   "BAT0" },
 	{ datetime,      "^c#bcecfe^^d^ %s^f-5^", "%d %b (%a) %H:%M" },
 };
